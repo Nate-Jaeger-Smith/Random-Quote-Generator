@@ -10,7 +10,28 @@ project 1 - A Random Quote Generator
 /*** 
  * `quotes` array 
 ***/
-
+const quotes = [
+  {
+    quote: "",
+    source: "",
+  },
+  {
+    quote: "",
+    source: "",
+  },
+  {
+    quote: "",
+    source: "",
+  },
+  {
+    quote: "",
+    source: "",
+  },
+  {
+    quote: "",
+    source: "",
+  }
+];
 
 
 /***
