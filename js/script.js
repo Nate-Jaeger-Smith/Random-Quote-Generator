@@ -12,24 +12,24 @@ project 1 - A Random Quote Generator
 ***/
 const quotes = [
   {
-    quote: "",
-    source: "",
+    quote: "Great moments are born from great opportunity.",
+    source: "Nikola Tesla",
   },
   {
-    quote: "",
-    source: "",
+    quote: "The past is behind, learn from it. The future is ahead, prepare for it. The present is here, live it.",
+    source: "Thomas S. Monson",
   },
   {
-    quote: "",
-    source: "",
+    quote: "Liberty, when it begins to take root, is a plant of rapid growth.",
+    source: "George Washington",
   },
   {
-    quote: "",
-    source: "",
+    quote: "The way to get started is to quit talking and begin doing.",
+    source: "Walt Disney",
   },
   {
-    quote: "",
-    source: "",
+    quote: "The future belongs to those who believe in the beauty of their dreams.",
+    source: "Eleanor Roosevelt",
   }
 ];
 
