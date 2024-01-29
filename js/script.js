@@ -38,7 +38,7 @@ function getRandomQuote() {
 	return quotes[ random ];
 }
 /***
- *  Builds quotes HTML
+ *  Builds the quotes HTML
  *  Inserts quote into document
  ***/
 function printQuote() {
@@ -46,10 +46,10 @@ function printQuote() {
 	let html = `<p class="quote"> ${randomQuote.quote} </p>
               <p class="source"> ${randomQuote.source}`;
 	if ( randomQuote.citation ) {
-		html += `<span class = "citation"> ${randomQuote.citation} </span>`
+		html += `<span class = "citation"> ${randomQuote.citation} </span>`;
 	}
 	if ( randomQuote.year ) {
-		html += `<span class = "year"> ${randomQuote.year} </span>`
+		html += `<span class = "year"> ${randomQuote.year} </span>`;
 	}
 	if ( randomQuote.tags ) {
 		html += `<span class = "tags"> ${randomQuote.tags} </span>`;
@@ -57,5 +57,17 @@ function printQuote() {
 	html += `</p>`;
 	document.getElementById( 'quote-box' ).innerHTML = html;
 }
+/***
+ *  Generates random RGB values
+ *  Assigns RGB color string as backgroundColor
+ */
+function getRandomBackground(){
+  let red = Math.floor(Math.random() * 255);
+  let green = Math.floor(Math.random() * 255);
+  let blue = Math.floor(Math.random() * 255);
+  document.body.style.backgroundColor = `rgb(${red},${green},${blue})`;
+}
+
 //Click event listener
-document.getElementById( 'load-quote' ).addEventListener( "click", printQuote, false );
+//Will call both printQuote and backgroundColor functions
+document.getElementById( 'load-quote' ).addEventListener( "click", () => {printQuote(); getRandomBackground()}, false );
