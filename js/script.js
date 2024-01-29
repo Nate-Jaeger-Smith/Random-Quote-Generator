@@ -62,9 +62,9 @@ function printQuote() {
  *  Assigns RGB color string as backgroundColor
  */
 function getRandomBackground(){
-  let red = Math.floor(Math.random() * 255);
-  let green = Math.floor(Math.random() * 255);
-  let blue = Math.floor(Math.random() * 255);
+  let red = Math.floor(Math.random() * 256);
+  let green = Math.floor(Math.random() * 256);
+  let blue = Math.floor(Math.random() * 256);
   document.body.style.backgroundColor = `rgb(${red},${green},${blue})`;
 }
 //Calls both functions in callback
