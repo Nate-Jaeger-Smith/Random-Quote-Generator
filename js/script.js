@@ -1,11 +1,4 @@
-/******************************************
-Treehouse FSJS Techdegree:
-project 1 - A Random Quote Generator
-******************************************/
-
-/*** 
- * `quotes` array 
-***/
+// Quotes array
 const quotes = [
   {
     quote: "Great moments are born from great opportunity.",
@@ -28,7 +21,8 @@ const quotes = [
   },
   {
     quote: "The way to get started is to quit talking and begin doing.",
-    source: "Walt Disney"
+    source: "Walt Disney",
+    year: 1957
   },
   {
     quote: "The future belongs to those who believe in the beauty of their dreams.",
@@ -44,7 +38,8 @@ const quotes = [
 
 
 /***
- * `getRandomQuote` function
+*  generates random number
+*  @returns random quote object
 ***/
 function getRandomQuote(){
   let random = Math.floor( Math.random() * quotes.length );
@@ -53,14 +48,26 @@ function getRandomQuote(){
 
 
 /***
- * `printQuote` function
+*  Builds quotes HTML
+*  Inserts quote into document
 ***/
+function printQuote(){
+  let randomQuote = getRandomQuote();
+  let html = `<p class="quote"> ${randomQuote.quote} </p>
+              <p class="source"> ${randomQuote.source}`;
+  
+  if(randomQuote.citation){
+    html += `<span class = "citation"> ${randomQuote.citation} </span>`
+  }
+  if(randomQuote.year){
+    html += `<span class = "year"> ${randomQuote.year} </span>`
+  }            
+  html += `</p>`;
+
+  document.getElementById('quote-box').innerHTML = html;
+}
 
 
 
-/***
- * click event listener for the print quote button
- * DO NOT CHANGE THE CODE BELOW!!
-***/
-
+//Click event listener
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
