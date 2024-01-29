@@ -29,6 +29,10 @@ const quotes = [{
 	citation: "The Picture of Dorian Grey",
 	year: 1890
 }];
+
+// Set a new interval for the quote to auto-refresh
+let newInterval = setInterval(printQuote, 5000);
+
 /***
  *  generates random number
  *  @returns random quote object
@@ -38,8 +42,9 @@ function getRandomQuote() {
 	return quotes[ random ];
 }
 /***
- *  Builds HTML for quote
- *  Displays quote
+ *  Assigns a random quote & builds HTML for quote
+ *  Displays quote & new background color
+ *  Resets the interval
  ***/
 function printQuote() {
 	let randomQuote = getRandomQuote();
@@ -56,25 +61,24 @@ function printQuote() {
 	}
 	html += `</p>`;
 	document.getElementById( 'quote-box' ).innerHTML = html;
+  getRandomBackground();
+  resetInterval();
 }
 /***
  *  Generates random RGB values
  *  Assigns RGB color string as backgroundColor
  */
 function getRandomBackground(){
-  let red = Math.floor(Math.random() * 256);
-  let green = Math.floor(Math.random() * 256);
-  let blue = Math.floor(Math.random() * 256);
-  document.body.style.backgroundColor = `rgb(${red},${green},${blue})`;
+  let rgbValue = () => Math.floor(Math.random() * 256);
+  document.body.style.backgroundColor = `rgb(${rgbValue()},${rgbValue()},${rgbValue()})`;
 }
-//Calls both functions in callback
-function callFunctions (){
-  printQuote();
-  getRandomBackground();
+/**
+ * Resets and creates a new interval
+ */
+function resetInterval(){
+  clearInterval(newInterval);
+  newInterval = setInterval(printQuote, 5000);
 }
 
-
-//Find way to set interval upon refresh of the quote. Clear the old interval when button is clicked
-setInterval(callFunctions, 10000);
 //Click event listener
-document.getElementById( 'load-quote' ).addEventListener( "click", callFunctions, false );
+document.getElementById('load-quote').addEventListener("click", printQuote, false);
