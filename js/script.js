@@ -41,6 +41,7 @@ function getRandomQuote() {
 	let random = Math.floor( Math.random() * quotes.length );
 	return quotes[ random ];
 }
+
 /***
  *  Assigns a random quote & builds HTML for quote
  *  Displays quote & new background color
@@ -64,6 +65,7 @@ function printQuote() {
   getRandomBackground();
   resetInterval();
 }
+
 /***
  *  Generates random RGB values
  *  Assigns RGB color string as backgroundColor
@@ -72,6 +74,7 @@ function getRandomBackground(){
   let rgbValue = () => Math.floor(Math.random() * 256);
   document.body.style.backgroundColor = `rgb(${rgbValue()},${rgbValue()},${rgbValue()})`;
 }
+
 /**
  * Resets and creates a new interval
  */
