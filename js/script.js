@@ -31,7 +31,7 @@ const quotes = [{
 }];
 
 // Set a new interval for the quote to auto-refresh
-let newInterval = setInterval(printQuote, 5000);
+let newInterval = setInterval(printQuote, 6000);
 
 /***
  *  generates random number
