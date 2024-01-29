@@ -1,5 +1,5 @@
 // Array of quote objects
-const quotes = [ {
+const quotes = [{
 	quote: "Great moments are born from great opportunity.",
 	source: "Nikola Tesla",
 	tags: "Inspiration"
@@ -28,7 +28,7 @@ const quotes = [ {
 	source: "Oscar Wilde",
 	citation: "The Picture of Dorian Grey",
 	year: 1890
-} ];
+}];
 /***
  *  generates random number
  *  @returns random quote object
@@ -38,8 +38,8 @@ function getRandomQuote() {
 	return quotes[ random ];
 }
 /***
- *  Builds the quotes HTML
- *  Inserts quote into document
+ *  Builds HTML for quote
+ *  Displays quote
  ***/
 function printQuote() {
 	let randomQuote = getRandomQuote();
@@ -67,7 +67,14 @@ function getRandomBackground(){
   let blue = Math.floor(Math.random() * 255);
   document.body.style.backgroundColor = `rgb(${red},${green},${blue})`;
 }
+//Calls both functions in callback
+function callFunctions (){
+  printQuote();
+  getRandomBackground();
+}
 
+
+//Find way to set interval upon refresh of the quote. Clear the old interval when button is clicked
+setInterval(callFunctions, 10000);
 //Click event listener
-//Will call both printQuote and backgroundColor functions
-document.getElementById( 'load-quote' ).addEventListener( "click", () => {printQuote(); getRandomBackground()}, false );
+document.getElementById( 'load-quote' ).addEventListener( "click", callFunctions, false );
