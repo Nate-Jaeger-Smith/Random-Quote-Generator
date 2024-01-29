@@ -1,4 +1,4 @@
-// Quotes array
+// Array of quote objects
 const quotes = [ {
 	quote: "Great moments are born from great opportunity.",
 	source: "Nikola Tesla",
