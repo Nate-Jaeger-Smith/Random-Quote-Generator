@@ -46,7 +46,10 @@ const quotes = [
 /***
  * `getRandomQuote` function
 ***/
-
+function getRandomQuote(){
+  let random = Math.floor( Math.random() * quotes.length );
+  return quotes[random];
+}
 
 
 /***
